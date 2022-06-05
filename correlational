@@ -106,7 +106,7 @@
    <hr>
    <pre md-src-pos="4450..4539"><code class="language-python" md-src-pos="4450..4539"><span md-src-pos="4450..4460"></span><span md-src-pos="4460..4536">sns.countplot(x=<span style="color: rgb(106, 135, 89);">'hasCF'</span><span style="color: rgb(204, 120, 50);">,</span> hue = <span style="color: rgb(106, 135, 89);">"fpStatus"</span><span style="color: rgb(204, 120, 50);">,</span> data = loan1<span style="color: rgb(204, 120, 50);">,</span> palette =<span style="color: rgb(106, 135, 89);">'Accent'</span>)</span>
 <span md-src-pos="4536..4537"></span><span md-src-pos="4536..4539"></span></code></pre>
-   <p md-src-pos="4566..4636"><img src="D:/Data%20Science/Python/projects/images/fpStatus-hasCF.PNG" alt="fpstatus" __idea-generated="true" md-src-pos="4566..4636"></p>
+   <p md-src-pos="4566..4636"><img src="https://user-images.githubusercontent.com/81165973/172070306-fb16ad23-d0cc-45e2-abfd-eb4ffe8dcc07.PNG" alt="fpstatus" __idea-generated="true" md-src-pos="4566..4636"></p>
    <ul md-src-pos="4638..4783">
     <li md-src-pos="4638..4783">interesting fact found under 'fpStatus' is that most of the applicant repaid their first payment of the loan but ended as chargeoff at the end.</li>
    </ul>
@@ -116,7 +116,7 @@
 <span md-src-pos="4904..4923">plt.tight_layout()</span>
 <span md-src-pos="4923..4934">plt.show()</span>
 <span md-src-pos="4934..4935"></span><span md-src-pos="4934..4937"></span></code></pre>
-   <p md-src-pos="4964..5039"><img src="D:/Data%20Science/Python/projects/images/loanStatus-before.PNG" alt="loanStatus" __idea-generated="true" md-src-pos="4964..5039"></p>
+   <p md-src-pos="4964..5039"><img src="https://user-images.githubusercontent.com/81165973/172070251-748c35c7-96b8-49fc-ac51-7b5a435df2b7.PNG" alt="loanStatus" __idea-generated="true" md-src-pos="4964..5039"></p>
    <ul md-src-pos="5041..5440">
     <li md-src-pos="5041..5189">countplot for loanStatus where overall dominant class is "Withdrawn Application (78%)" which could be ineffective processing of loan application.</li>
     <li md-src-pos="5190..5295">This will require technical team/analyst to QC on the automation and reason being abandon for &gt;2 weeks.</li>
@@ -126,7 +126,7 @@
 <span md-src-pos="5482..5527">sns.distplot(loan1[<span style="color: rgb(106, 135, 89);">'loanAmount'</span>]<span style="color: rgb(204, 120, 50);">,</span> color=<span style="color: rgb(106, 135, 89);">'y'</span>)</span>
 <span md-src-pos="5527..5558">loan1[<span style="color: rgb(106, 135, 89);">'loanAmount'</span>].describe()</span>
 <span md-src-pos="5558..5559"></span><span md-src-pos="5558..5561"></span></code></pre>
-   <p md-src-pos="5588..5656"><img src="D:/Data%20Science/Python/projects/images/loanamount.PNG" alt="loanAmount" __idea-generated="true" md-src-pos="5588..5656"></p>
+   <p md-src-pos="5588..5656"><img src="https://user-images.githubusercontent.com/81165973/172070275-5100b01a-5d5c-44b7-8de1-f3db5394f596.PNG" alt="loanAmount" __idea-generated="true" md-src-pos="5588..5656"></p>
    <ul md-src-pos="5657..5766">
     <li md-src-pos="5657..5766">distplot for loanAmount that depict most customer loan between the amount $400-$600, average being $514.25</li>
    </ul>
@@ -134,7 +134,7 @@
 <span md-src-pos="5815..5883">stt.set_xticklabels(stt.get_xticklabels()<span style="color: rgb(204, 120, 50);">,</span> rotation=<span style="color: rgb(104, 151, 187);">90</span><span style="color: rgb(204, 120, 50);">,</span> ha=<span style="color: rgb(106, 135, 89);">"right"</span>)</span>
 <span md-src-pos="5883..5902">plt.tight_layout()</span>
 <span md-src-pos="5902..5903"></span><span md-src-pos="5902..5905"></span></code></pre>
-   <p md-src-pos="5932..5990"><img src="D:/Data%20Science/Python/projects/images/state.PNG" alt="State" __idea-generated="true" md-src-pos="5932..5990"></p>
+   <p md-src-pos="5932..5990"><img src="https://user-images.githubusercontent.com/81165973/172070195-73a3c08a-fd37-42a3-8109-743836a2d789.PNG" alt="State" __idea-generated="true" md-src-pos="5932..5990"></p>
    <ul md-src-pos="5991..6140">
     <li md-src-pos="5991..6140">Based on geographically, analyst can further investigate if the company is capable to proceed with market campaigning in the high demanding states.</li>
    </ul>
@@ -144,11 +144,11 @@
 <span md-src-pos="6285..6286"></span>
 <span md-src-pos="6286..6365">sns.countplot(x=<span style="color: rgb(106, 135, 89);">'leadType'</span><span style="color: rgb(204, 120, 50);">,</span> hue = <span style="color: rgb(106, 135, 89);">"isFunded"</span><span style="color: rgb(204, 120, 50);">,</span> data = loan1<span style="color: rgb(204, 120, 50);">,</span> palette =<span style="color: rgb(106, 135, 89);">'Accent'</span>)</span>
 <span md-src-pos="6365..6366"></span><span md-src-pos="6365..6368"></span></code></pre>
-   <p md-src-pos="6395..6459"><img src="D:/Data%20Science/Python/projects/images/leadType.PNG" alt="leadType" __idea-generated="true" md-src-pos="6395..6459"></p>
+   <p md-src-pos="6395..6459"><img src="https://user-images.githubusercontent.com/81165973/172070307-b4bbba31-ccf0-4387-b752-29bf7be289a8.PNG" alt="leadType" __idea-generated="true" md-src-pos="6395..6459"></p>
    <ul md-src-pos="6460..6561">
     <li md-src-pos="6460..6561">Most of the sources are coming from the most expensive channel, which company bought from ping tree</li>
    </ul>
-   <p md-src-pos="6589..6673"><img src="D:/Data%20Science/Python/projects/images/leadtype-isFunded.PNG" alt="leadType  isFunded" __idea-generated="true" md-src-pos="6589..6673"></p>
+   <p md-src-pos="6589..6673"><img src="https://user-images.githubusercontent.com/81165973/172070368-5379de92-cc7c-405e-87e6-b4d9b6f70c5d.PNG" alt="leadType  isFunded" __idea-generated="true" md-src-pos="6589..6673"></p>
    <ul md-src-pos="6674..7056">
     <li md-src-pos="6674..6821">Successful conversion rate from lead to funded are supprisingly low with the 'bvMandatory' even standing as the highest ranking under 'isfunded'.</li>
     <li md-src-pos="6822..7056">This bring to the question should the company continue to invest the budget into buying more leads from ping tree instead the company may plan more mail campaign/ advertise moneylion brand to obtain more attraction for new customer.</li>
@@ -156,7 +156,8 @@
    <hr>
    <h1 md-src-pos="7062..7109">Join loan file with clarity underwriting file</h1>
    <pre md-src-pos="7110..7315"><code class="language-python" md-src-pos="7110..7315"><span md-src-pos="7110..7120"></span><span md-src-pos="7120..7182">clarity_u = pd.read_csv(<span style="color: rgb(106, 135, 89);">"clarity_underwriting_variables.csv"</span>)</span>
-<span md-src-pos="7182..7312">loan2= loan1.merge(clarity_u[[<span style="color: rgb(106, 135, 89);">'underwritingid'</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(106, 135, 89);">'clearfraudscore'</span>]]<span style="color: rgb(204, 120, 50);">,</span>left_on=<span style="color: rgb(106, 135, 89);">'clarityFraudId'</span><span style="color: rgb(204, 120, 50);">,</span>right_on=<span style="color: rgb(106, 135, 89);">'underwritingid'</span><span style="color: rgb(204, 120, 50);">,</span>how=<span style="color: rgb(106, 135, 89);">'left'</span>)</span>
+<span md-src-pos="7182..7312">loan2= loan1.merge(clarity_u[[<span style="color: rgb(106, 135, 89);">'underwritingid'</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(106, 135, 89);">'clearfraudscore
+'</span>]]<span style="color: rgb(204, 120, 50);">,</span>left_on=<span style="color: rgb(106, 135, 89);">'clarityFraudId'</span><span style="color: rgb(204, 120, 50);">,</span>right_on=<span style="color: rgb(106, 135, 89);">'underwritingid'</span><span style="color: rgb(204, 120, 50);">,</span>how=<span style="color: rgb(106, 135, 89);">'left'</span>)</span>
 <span md-src-pos="7312..7313"></span><span md-src-pos="7312..7315"></span></code></pre>
    <ul md-src-pos="7316..7471">
     <li md-src-pos="7316..7471">Joining only 'clearfraudscore' from 'clarity csv' into loan dataframe as it is crucial feature that the industry could have for fraud detection solution.</li>
@@ -167,7 +168,7 @@
    <pre md-src-pos="7596..7695"><code class="language-python" md-src-pos="7596..7695"><span md-src-pos="7596..7606"></span><span md-src-pos="7606..7642">loan2[<span style="color: rgb(106, 135, 89);">'clearfraudscore'</span>].describe()</span>
 <span md-src-pos="7642..7692">sns.distplot(loan2[<span style="color: rgb(106, 135, 89);">'clearfraudscore'</span>]<span style="color: rgb(204, 120, 50);">,</span> color=<span style="color: rgb(106, 135, 89);">'b'</span>)</span>
 <span md-src-pos="7692..7693"></span><span md-src-pos="7692..7695"></span></code></pre>
-   <p md-src-pos="7723..7801"><img src="D:/Data%20Science/Python/projects/images/clearfraudscore.PNG" alt="clearfraudscore" __idea-generated="true" md-src-pos="7723..7801"></p>
+   <p md-src-pos="7723..7801"><img src="https://user-images.githubusercontent.com/81165973/172070297-c7d3a4f0-28d5-4ab5-baa6-bb5d304dfd13.PNG" alt="clearfraudscore" __idea-generated="true" md-src-pos="7723..7801"></p>
    <ul md-src-pos="7802..8057">
     <li md-src-pos="7802..7878">Higher clearfraudscore = higher fradulent chance, scoring range : 0 - 1000</li>
     <li md-src-pos="7879..8057">Deep dive into clearfraudscore, notice that average scoring is around 690, but the highest propotion/desity falls under the 800 scoring with &gt;30% of the group seen in the plot.</li>
@@ -175,7 +176,7 @@
    <pre md-src-pos="8060..8159"><code class="language-python" md-src-pos="8060..8159"><span md-src-pos="8060..8070"></span><span md-src-pos="8070..8098">plt.figure(figsize=(<span style="color: rgb(104, 151, 187);">16</span><span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">6</span>))</span>
 <span md-src-pos="8098..8156">cfs2 = sns.violinplot (x=cfs<span style="color: rgb(204, 120, 50);">,</span> y=<span style="color: rgb(106, 135, 89);">'loanStatus'</span><span style="color: rgb(204, 120, 50);">,</span>data= loan2)</span>
 <span md-src-pos="8156..8157"></span><span md-src-pos="8156..8159"></span></code></pre>
-   <p md-src-pos="8186..8288"><img src="D:/Data%20Science/Python/projects/images/clearfraudscore-loanstatus.PNG" alt="clearfraudscore  loanstatus" __idea-generated="true" md-src-pos="8186..8288"></p>
+   <p md-src-pos="8186..8288"><img src="https://user-images.githubusercontent.com/81165973/172070300-860607d9-c940-41be-9c73-348009b0d31b.PNG" alt="clearfraudscore  loanstatus" __idea-generated="true" md-src-pos="8186..8288"></p>
    <ul md-src-pos="8290..8635">
     <li md-src-pos="8290..8457">Furthermore, through the violinplot, we can see "Rejected" + "External Collection" customer tends to have lower scoring which is signaling better profile/background.</li>
     <li md-src-pos="8458..8547">Hence, there's a need for analyst/underwriter to review on the reason of the occurence.</li>
@@ -206,7 +207,7 @@
 <span md-src-pos="9610..9638">plt.figure(figsize=(<span style="color: rgb(104, 151, 187);">12</span><span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">8</span>))</span>
 <span md-src-pos="9638..9706">correlation = sns.heatmap(loan4.corr()<span style="color: rgb(204, 120, 50);">,</span> annot=<span style="color: rgb(204, 120, 50);">True</span><span style="color: rgb(204, 120, 50);">,</span> cmap=<span style="color: rgb(106, 135, 89);">'viridis'</span>)</span>
 <span md-src-pos="9706..9707"></span><span md-src-pos="9706..9709"></span></code></pre>
-   <p md-src-pos="9737..9817"><img src="D:/Data%20Science/Python/projects/images/correlational.PNG" alt="Correlation heatmap" __idea-generated="true" md-src-pos="9737..9817"></p>
+   <p md-src-pos="9737..9817"><img src="https://user-images.githubusercontent.com/81165973/172070303-dd5a806d-fbf6-46d0-ab31-9d79b7a4c22e.PNG" alt="Correlation heatmap" __idea-generated="true" md-src-pos="9737..9817"></p>
    <pre md-src-pos="9820..9976"><code class="language-python" md-src-pos="9820..9976"><span md-src-pos="9820..9830"></span><span md-src-pos="9830..9973">loan5 = loan4.drop(columns={<span style="color: rgb(106, 135, 89);">'loanId'</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(106, 135, 89);">'anon_ssn'</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(106, 135, 89);">'underwritingid'</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(106, 135, 89);">'clarityFraudId'</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(106, 135, 89);">'approved'</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(106, 135, 89);">'originated'</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(106, 135, 89);">'applicationDate'</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(106, 135, 89);">'originatedDate'</span>})</span>
 <span md-src-pos="9973..9974"></span><span md-src-pos="9973..9976"></span></code></pre>
    <ul md-src-pos="9977..10234">
@@ -296,7 +297,7 @@
 <span md-src-pos="13579..13591">importances</span>
 <span md-src-pos="13591..13652">sns.barplot(y=<span style="color: rgb(106, 135, 89);">'Attribute'</span><span style="color: rgb(204, 120, 50);">,</span> x=<span style="color: rgb(106, 135, 89);">'Importance'</span><span style="color: rgb(204, 120, 50);">,</span> data=importances)</span>
 <span md-src-pos="13652..13653"></span><span md-src-pos="13652..13655"></span></code></pre>
-   <p md-src-pos="13682..13769"><img src="D:/Data%20Science/Python/projects/images/Feature%20Importance-XGB.PNG" alt="FeatureImportance" __idea-generated="true" md-src-pos="13682..13769"></p>
+   <p md-src-pos="13682..13769"><img src="https://user-images.githubusercontent.com/81165973/172070305-f5892803-b678-4174-90c9-9da1b4c32655.PNG" alt="FeatureImportance" __idea-generated="true" md-src-pos="13682..13769"></p>
    <hr>
    <h1 md-src-pos="13775..13787">Conclusion</h1>
    <ul md-src-pos="13788..14198">
