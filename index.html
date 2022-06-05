@@ -1,0 +1,318 @@
+<!doctype html>
+<html>
+ <head> 
+  <title>IntelliJ Markdown Preview</title>           
+  <style>/* Reworked by IntelliJ Team The MIT License (MIT) Copyright (c) JetBrains Adapted from https://github.com/sindresorhus/github-markdown-css The MIT License (MIT) Copyright (c) Sindre Sorhus &lt;sindresorhus@gmail.com&gt; (sindresorhus.com) Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ @font-face { font-family: octicons-anchor; src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff'); } body { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: Helvetica, Arial, freesans, sans-serif; font-size: 14px; line-height: 1.6; word-wrap: break-word; margin: 0 2em; } strong { font-weight: bold; } img { border: 0; } input { color: inherit; font: inherit; margin: 0; line-height: normal; } html input[disabled] { cursor: default; } input[type="checkbox"] { box-sizing: border-box; padding: 0; } body * { box-sizing: border-box; } input { font: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; } a { text-decoration: none; } a:hover, a:active { text-decoration: underline; } hr { height: 1px; padding: 0; margin: 20px 0; border: 0 none; } hr:before { display: table; content: ""; } hr:after { display: table; clear: both; content: ""; } blockquote { margin: 0; } ul, ol { padding: 0; margin-top: 0; margin-bottom: 0; } ol ol, ul ol { list-style-type: lower-roman; } ul ul ol, ul ol ol, ol ul ol, ol ol ol { list-style-type: lower-alpha; } dd { margin-left: 0; } .octicon { font: normal normal normal 16px/1 octicons-anchor; display: inline-block; text-decoration: none; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } .octicon-link:before { content: '\f05c'; } .markdown-body &gt; *:first-child { margin-top: 0 !important; } .markdown-body &gt; *:last-child { margin-bottom: 0 !important; } .anchor { position: absolute; top: 0; left: 0; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; } .anchor:focus { outline: none; } h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; } h1 .octicon-link, h2 .octicon-link, h3 .octicon-link, h4 .octicon-link, h5 .octicon-link, h6 .octicon-link { display: none; color: #000; vertical-align: middle; } h1:hover .anchor, h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; } h1:hover .anchor .octicon-link, h2:hover .anchor .octicon-link, h3:hover .anchor .octicon-link, h4:hover .anchor .octicon-link, h5:hover .anchor .octicon-link, h6:hover .anchor .octicon-link { display: inline-block; } h1 { font-size: 2.2em; padding-top: 0.6em; } h1 .anchor { line-height: 1; } h2 { font-size: 1.8em; line-height: 1.2; padding-top: 0.6em; } h2 .anchor { line-height: 1.2; } h3 { font-size: 1.3em; line-height: 1; padding-top: 0.6em; } h3 .anchor { line-height: 1.2; } h4 { font-size: 1em; } h4 .anchor { line-height: 1.2; } h5 { font-size: 1em; } h5 .anchor { line-height: 1.1; } h6 { font-size: 1em; } h6 .anchor { line-height: 1.1; } p, blockquote, ul, ol, dl, table, pre { margin-top: 16px; margin-bottom: 16px; } ul, ol { padding-left: 2em; } ul ul, ul ol, ol ol, ol ul { margin-top: 0; margin-bottom: 0; } li &gt; p { margin-top: 0; margin-bottom: 0; } dl { padding: 0; } dl dt { padding: 0; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; } dl dd { padding: 0 16px; margin-bottom: 16px; } blockquote { padding: 10px 10px 10px 16px; border-left: 2px solid; border-radius: 0 3px 3px 0; } blockquote &gt; :first-child { margin-top: 0; } blockquote &gt; :last-child { margin-bottom: 0; } table { display: block; width: 100%; overflow: auto; word-break: normal; border-collapse: collapse; border-spacing: 0; font-size: 1em; } table th { font-weight: bold; } table th, table td { padding: 6px 13px; background: transparent; } table tr { border-top: 1px solid; } img { max-width: 100%; box-sizing: border-box; } code { font: 0.9em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace; padding: 0.2em 0.4em; margin: 2px; border-radius: 3px; } pre &gt; code { padding: 0; margin: 0; font-size: 100%; word-break: normal; white-space: pre; background: transparent; border: 0; } .highlight { margin-bottom: 16px; } .highlight pre, pre { font: 0.85em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace; padding: 16px; overflow: auto; line-height: 1.45; border-radius: 3px; } pre code { display: inline; max-width: initial; padding: 0; margin: 0; overflow: initial; line-height: inherit; word-wrap: normal; background-color: transparent; border: 0; } pre code:before, pre code:after { content: normal; } kbd { font: 0.9em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace; padding: 0.2em 0.4em; margin: 2px; border-radius: 3px; } .task-list-item { list-style-type: none; } .task-list-item + .task-list-item { margin-top: 3px; } .task-list-item input { margin: 0 0.35em 0.25em -0.6em; vertical-align: middle; } :checked + .radio-label { z-index: 1; position: relative; } span.user-del { text-decoration: line-through; } ::-webkit-scrollbar { width: 6px; height: 6px; } ::-webkit-scrollbar-thumb { -webkit-border-radius: 10px; } ::-webkit-scrollbar-track:vertical { -webkit-box-shadow: -1px 0 0 #ededed; } ::-webkit-scrollbar-track { background-color: transparent; } ::-webkit-scrollbar { width: 6px; } </style>
+  <style>body { background-color: rgba(43, 43, 43, 255.0); font-size: 14px !important; } body, p, blockquote, ul, ol, dl, table, pre, code, tr { color: rgba(169, 183, 198, 255.0); } a { color: rgba(88, 157, 246, 255.0); } table td, table th { border: 1px solid rgba(81, 81, 81, 255.0); } hr { background-color: rgba(81, 81, 81, 255.0); } kbd, tr { border: 1px solid rgba(81, 81, 81, 255.0); } h6 { color: rgba(120, 120, 120, 255.0); } blockquote { border-left: 2px solid rgba(88, 157, 246, 0.4); } ::-webkit-scrollbar-thumb { background-color: rgba(166, 166, 166, 0.2784313725490196); } blockquote, code, pre { background-color: rgba(212, 222, 231, 0.09803921568627451); }</style>
+ </head> 
+ <body>
+  <div md-src-pos="0..14613">
+   <h1 md-src-pos="19..41">MoneyLion Assessment</h1>
+   <p md-src-pos="42..81"><span md-src-pos="42..52">Tools used</span>: <span md-src-pos="54..61">Pycharm</span> (<span md-src-pos="63..69">python</span> <span md-src-pos="70..71">+</span> <span md-src-pos="72..80">markdown</span>)</p>
+   <p md-src-pos="107..125"><span md-src-pos="107..124">Problem Statement</span>:</p>
+   <ol md-src-pos="126..371">
+    <li md-src-pos="126..253">Underwriting isn't neccessary as accurate as always and technical error from the automation bot while screening application.</li>
+    <li md-src-pos="254..371">Attracting people who don't intend to pay back loans as customer tends to seek bank before other option for loans.</li>
+   </ol>
+   <p md-src-pos="373..381"><span md-src-pos="373..380">Summary</span>:</p>
+   <ol md-src-pos="382..735">
+    <li md-src-pos="382..497">Loan application received, automation/manual intervention by underwriters for risk assessment and loan approval.</li>
+    <li md-src-pos="498..614">Commonly known issue for lending services would be default payment where fund distributed leading to charge off. </li>
+    <li md-src-pos="615..735">In order to mitigate the losses, prediction in payment default would be helpful for company to take precaution steps.</li>
+   </ol>
+   <p md-src-pos="737..933"><span md-src-pos="737..760">By end of the findings,</span> <span md-src-pos="761..831">the features importance will be recorded to further improve the model,</span> <span md-src-pos="832..933">underwrite to pay attention for room of improvement and company to make business/management decision.</span></p>
+   <p md-src-pos="935..1058"><span md-src-pos="935..965">This work will solely focus on</span> "<span md-src-pos="967..975">isFunded</span>" <span md-src-pos="977..1058">customer on loanStatus and make prediction on probability of chargeoff occurence.</span></p>
+   <pre md-src-pos="1079..1600"><code class="language-python" md-src-pos="1079..1600"><span md-src-pos="1079..1089"></span><span md-src-pos="1089..1099"><span style="color: rgb(204, 120, 50);">import</span> os</span>
+<span md-src-pos="1099..1119"><span style="color: rgb(204, 120, 50);">import</span> pandas <span style="color: rgb(204, 120, 50);">as</span> pd</span>
+<span md-src-pos="1119..1138"><span style="color: rgb(204, 120, 50);">import</span> numpy <span style="color: rgb(204, 120, 50);">as</span> np</span>
+<span md-src-pos="1138..1170"><span style="color: rgb(204, 120, 50);">import</span> matplotlib.pyplot <span style="color: rgb(204, 120, 50);">as</span> plt</span>
+<span md-src-pos="1170..1192"><span style="color: rgb(204, 120, 50);">import</span> seaborn <span style="color: rgb(204, 120, 50);">as</span> sns</span>
+<span md-src-pos="1192..1269"><span style="color: rgb(204, 120, 50);">from</span> sklearn.preprocessing <span style="color: rgb(204, 120, 50);">import</span> LabelEncoder<span style="color: rgb(204, 120, 50);">,</span> StandardScaler<span style="color: rgb(204, 120, 50);">,</span> MinMaxScaler</span>
+<span md-src-pos="1269..1303"><span style="color: rgb(204, 120, 50);">from</span> sklearn <span style="color: rgb(204, 120, 50);">import</span> preprocessing</span>
+<span md-src-pos="1303..1337"><span style="color: rgb(204, 120, 50);">from</span> sklearn.utils <span style="color: rgb(204, 120, 50);">import</span> shuffle</span>
+<span md-src-pos="1337..1390"><span style="color: rgb(204, 120, 50);">from</span> sklearn.model_selection <span style="color: rgb(204, 120, 50);">import</span> train_test_split</span>
+<span md-src-pos="1390..1424"><span style="color: rgb(204, 120, 50);">from</span> xgboost <span style="color: rgb(204, 120, 50);">import</span> XGBClassifier</span>
+<span md-src-pos="1424..1452"><span style="color: rgb(204, 120, 50);">from</span> sklearn <span style="color: rgb(204, 120, 50);">import</span> metrics</span>
+<span md-src-pos="1452..1502"><span style="color: rgb(204, 120, 50);">from</span> sklearn.metrics <span style="color: rgb(204, 120, 50);">import</span> classification_report</span>
+<span md-src-pos="1502..1547"><span style="color: rgb(204, 120, 50);">from</span> sklearn.metrics <span style="color: rgb(204, 120, 50);">import</span> confusion_matrix</span>
+<span md-src-pos="1547..1597"><span style="color: rgb(204, 120, 50);">from</span> sklearn.metrics <span style="color: rgb(204, 120, 50);">import</span> plot_confusion_matrix</span>
+<span md-src-pos="1597..1598"></span><span md-src-pos="1597..1600"></span></code></pre>
+   <pre md-src-pos="1611..1987"><code class="language-python" md-src-pos="1611..1987"><span md-src-pos="1611..1622"></span><span md-src-pos="1622..1655"><span style="color: rgb(128, 128, 128);"># For simple view mode in Python</span></span>
+<span md-src-pos="1655..1703">pd.set_option(<span style="color: rgb(106, 135, 89);">'display.float'</span><span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(106, 135, 89);">'{:.2f}'</span>.format)</span>
+<span md-src-pos="1703..1744">pd.set_option(<span style="color: rgb(106, 135, 89);">'display.max_columns'</span><span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">50</span>)</span>
+<span md-src-pos="1744..1782">pd.set_option(<span style="color: rgb(106, 135, 89);">'display.max_rows'</span><span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">50</span>)</span>
+<span md-src-pos="1782..1783"></span>
+<span md-src-pos="1783..1862"><span style="color: rgb(128, 128, 128);"># To identify the current working directory, change to desire and load dataset</span></span>
+<span md-src-pos="1862..1874">os.getcwd()</span>
+<span md-src-pos="1874..1952">os.chdir(<span style="color: rgb(106, 135, 89);">"D:</span><span style="color: rgb(204, 120, 50);">\\</span><span style="color: rgb(106, 135, 89);">Data Science</span><span style="color: rgb(204, 120, 50);">\\</span><span style="color: rgb(106, 135, 89);">MoneyLion assessment</span><span style="color: rgb(204, 120, 50);">\\</span><span style="color: rgb(106, 135, 89);">DS Assessment</span><span style="color: rgb(204, 120, 50);">\\</span><span style="color: rgb(106, 135, 89);">data</span><span style="color: rgb(204, 120, 50);">\\</span><span style="color: rgb(106, 135, 89);">data"</span>)</span>
+<span md-src-pos="1952..1983">loan = pd.read_csv(<span style="color: rgb(106, 135, 89);">"loan.csv"</span>)</span>
+<span md-src-pos="1983..1984"></span><span md-src-pos="1983..1987"></span></code></pre>
+   <pre md-src-pos="1999..2203"><code class="language-python" md-src-pos="1999..2203"><span md-src-pos="1999..2009"></span><span md-src-pos="2009..2036"><span style="color: rgb(128, 128, 128);"># Shorten the feature name</span></span>
+<span md-src-pos="2036..2112">loan1 = loan.rename(columns= {<span style="color: rgb(106, 135, 89);">'originallyScheduledPaymentAmount'</span>:<span style="color: rgb(106, 135, 89);">'oriSPA'</span>})</span>
+<span md-src-pos="2112..2181"><span style="color: rgb(128, 128, 128);"># An overview on the datatypes &amp; features of the raw files imported.</span></span>
+<span md-src-pos="2181..2200">info = loan.info()</span>
+<span md-src-pos="2200..2201"></span><span md-src-pos="2200..2203"></span></code></pre>
+   <pre md-src-pos="2204..3701"><code md-src-pos="2204..3701"><span md-src-pos="2204..2208"></span><span md-src-pos="2208..2247">RangeIndex: 577682 entries, 0 to 577681</span>
+<span md-src-pos="2248..2280">Data columns (total 19 columns):</span>
+<span md-src-pos="2281..2344"> #   Column                            Non-Null Count   Dtype  </span>
+<span md-src-pos="2345..2408">---  ------                            --------------   -----  </span>
+<span md-src-pos="2409..2472"> 0   loanId                            577426 non-null  object </span>
+<span md-src-pos="2473..2536"> 1   anon_ssn                          577682 non-null  object </span>
+<span md-src-pos="2537..2600"> 2   payFrequency                      576409 non-null  object </span>
+<span md-src-pos="2601..2664"> 3   apr                               573760 non-null  float64</span>
+<span md-src-pos="2665..2728"> 4   applicationDate                   577682 non-null  object </span>
+<span md-src-pos="2729..2792"> 5   originated                        577682 non-null  bool   </span>
+<span md-src-pos="2793..2856"> 6   originatedDate                    46044 non-null   object </span>
+<span md-src-pos="2857..2920"> 7   nPaidOff                          577658 non-null  float64</span>
+<span md-src-pos="2921..2984"> 8   approved                          577682 non-null  bool   </span>
+<span md-src-pos="2985..3048"> 9   isFunded                          577682 non-null  int64  </span>
+<span md-src-pos="3049..3112"> 10  loanStatus                        577291 non-null  object </span>
+<span md-src-pos="3113..3176"> 11  loanAmount                        575432 non-null  float64</span>
+<span md-src-pos="3177..3240"> 12  oriSPA                            577682 non-null  float64</span>
+<span md-src-pos="3241..3304"> 13  state                             577550 non-null  object </span>
+<span md-src-pos="3305..3368"> 14  leadType                          577682 non-null  object </span>
+<span md-src-pos="3369..3432"> 15  leadCost                          577682 non-null  int64  </span>
+<span md-src-pos="3433..3496"> 16  fpStatus                          51723 non-null   object </span>
+<span md-src-pos="3497..3560"> 17  clarityFraudId                    357693 non-null  object </span>
+<span md-src-pos="3561..3624"> 18  hasCF                             577682 non-null  int64  </span>
+<span md-src-pos="3625..3674">dtypes: bool(2), float64(4), int64(3), object(10)</span>
+<span md-src-pos="3675..3697">memory usage: 76.0+ MB</span>
+<span md-src-pos="3698..3698"></span><span md-src-pos="3698..3701"></span></code></pre>
+   <pre md-src-pos="3702..3821"><code class="language-python" md-src-pos="3702..3821"><span md-src-pos="3702..3712"></span><span md-src-pos="3712..3747"><span style="color: rgb(128, 128, 128);"># check if there is any null value</span></span>
+<span md-src-pos="3747..3818">loan1.isna().sum(axis=<span style="color: rgb(104, 151, 187);">0</span>).sort_values(ascending=<span style="color: rgb(204, 120, 50);">False</span>) / loan1.shape[<span style="color: rgb(104, 151, 187);">0</span>]</span>
+<span md-src-pos="3818..3819"></span><span md-src-pos="3818..3821"></span></code></pre>
+   <pre md-src-pos="3822..4281"><code md-src-pos="3822..4281"><span md-src-pos="3822..3826"></span><span md-src-pos="3826..3848">originatedDate    0.92</span>
+<span md-src-pos="3849..3871">fpStatus          0.91</span>
+<span md-src-pos="3872..3894">clarityFraudId    0.38</span>
+<span md-src-pos="3895..3917">apr               0.01</span>
+<span md-src-pos="3918..3940">loanAmount        0.00</span>
+<span md-src-pos="3941..3963">payFrequency      0.00</span>
+<span md-src-pos="3964..3986">loanStatus        0.00</span>
+<span md-src-pos="3987..4009">loanId            0.00</span>
+<span md-src-pos="4010..4032">state             0.00</span>
+<span md-src-pos="4033..4055">nPaidOff          0.00</span>
+<span md-src-pos="4056..4078">leadCost          0.00</span>
+<span md-src-pos="4079..4101">leadType          0.00</span>
+<span md-src-pos="4102..4124">isFunded          0.00</span>
+<span md-src-pos="4125..4147">oriSPA            0.00</span>
+<span md-src-pos="4148..4170">anon_ssn          0.00</span>
+<span md-src-pos="4171..4193">approved          0.00</span>
+<span md-src-pos="4194..4216">originated        0.00</span>
+<span md-src-pos="4217..4239">applicationDate   0.00</span>
+<span md-src-pos="4240..4262">hasCF             0.00</span>
+<span md-src-pos="4263..4277">dtype: float64</span>
+<span md-src-pos="4278..4278"></span><span md-src-pos="4278..4281"></span></code></pre>
+   <p md-src-pos="4282..4444">'<span md-src-pos="4283..4297">originatedDate</span>' <span md-src-pos="4299..4300">&amp;</span> '<span md-src-pos="4302..4310">fpStatus</span>' <span md-src-pos="4312..4320">had over</span> &gt;<span md-src-pos="4322..4325">90%</span> <span md-src-pos="4326..4392">missing rate and clarityFraudId being the identification variable,</span> <span md-src-pos="4393..4444">which we are unable to impute but possible to drop.</span></p>
+   <hr>
+   <pre md-src-pos="4450..4539"><code class="language-python" md-src-pos="4450..4539"><span md-src-pos="4450..4460"></span><span md-src-pos="4460..4536">sns.countplot(x=<span style="color: rgb(106, 135, 89);">'hasCF'</span><span style="color: rgb(204, 120, 50);">,</span> hue = <span style="color: rgb(106, 135, 89);">"fpStatus"</span><span style="color: rgb(204, 120, 50);">,</span> data = loan1<span style="color: rgb(204, 120, 50);">,</span> palette =<span style="color: rgb(106, 135, 89);">'Accent'</span>)</span>
+<span md-src-pos="4536..4537"></span><span md-src-pos="4536..4539"></span></code></pre>
+   <p md-src-pos="4566..4636"><img src="D:/Data%20Science/Python/projects/images/fpStatus-hasCF.PNG" alt="fpstatus" __idea-generated="true" md-src-pos="4566..4636"></p>
+   <ul md-src-pos="4638..4783">
+    <li md-src-pos="4638..4783">interesting fact found under 'fpStatus' is that most of the applicant repaid their first payment of the loan but ended as chargeoff at the end.</li>
+   </ul>
+   <hr>
+   <pre md-src-pos="4788..4937"><code class="language-python" md-src-pos="4788..4937"><span md-src-pos="4788..4798"></span><span md-src-pos="4798..4838">LS = sns.countplot(loan1[<span style="color: rgb(106, 135, 89);">'loanStatus'</span>])</span>
+<span md-src-pos="4838..4904">LS.set_xticklabels(LS.get_xticklabels()<span style="color: rgb(204, 120, 50);">,</span> rotation=<span style="color: rgb(104, 151, 187);">50</span><span style="color: rgb(204, 120, 50);">,</span> ha=<span style="color: rgb(106, 135, 89);">"right"</span>)</span>
+<span md-src-pos="4904..4923">plt.tight_layout()</span>
+<span md-src-pos="4923..4934">plt.show()</span>
+<span md-src-pos="4934..4935"></span><span md-src-pos="4934..4937"></span></code></pre>
+   <p md-src-pos="4964..5039"><img src="D:/Data%20Science/Python/projects/images/loanStatus-before.PNG" alt="loanStatus" __idea-generated="true" md-src-pos="4964..5039"></p>
+   <ul md-src-pos="5041..5440">
+    <li md-src-pos="5041..5189">countplot for loanStatus where overall dominant class is "Withdrawn Application (78%)" which could be ineffective processing of loan application.</li>
+    <li md-src-pos="5190..5295">This will require technical team/analyst to QC on the automation and reason being abandon for &gt;2 weeks.</li>
+    <li md-src-pos="5296..5440">Purpose is to see if there's still room for technical capability and if we could revisit the rules for limiting application (automate/manual).</li>
+   </ul>
+   <pre md-src-pos="5444..5561"><code class="language-python" md-src-pos="5444..5561"><span md-src-pos="5444..5454"></span><span md-src-pos="5454..5482">plt.figure(figsize=(<span style="color: rgb(104, 151, 187);">14</span><span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">6</span>))</span>
+<span md-src-pos="5482..5527">sns.distplot(loan1[<span style="color: rgb(106, 135, 89);">'loanAmount'</span>]<span style="color: rgb(204, 120, 50);">,</span> color=<span style="color: rgb(106, 135, 89);">'y'</span>)</span>
+<span md-src-pos="5527..5558">loan1[<span style="color: rgb(106, 135, 89);">'loanAmount'</span>].describe()</span>
+<span md-src-pos="5558..5559"></span><span md-src-pos="5558..5561"></span></code></pre>
+   <p md-src-pos="5588..5656"><img src="D:/Data%20Science/Python/projects/images/loanamount.PNG" alt="loanAmount" __idea-generated="true" md-src-pos="5588..5656"></p>
+   <ul md-src-pos="5657..5766">
+    <li md-src-pos="5657..5766">distplot for loanAmount that depict most customer loan between the amount $400-$600, average being $514.25</li>
+   </ul>
+   <pre md-src-pos="5769..5905"><code class="language-python" md-src-pos="5769..5905"><span md-src-pos="5769..5779"></span><span md-src-pos="5779..5815">stt = sns.countplot(loan1[<span style="color: rgb(106, 135, 89);">'state'</span>])</span>
+<span md-src-pos="5815..5883">stt.set_xticklabels(stt.get_xticklabels()<span style="color: rgb(204, 120, 50);">,</span> rotation=<span style="color: rgb(104, 151, 187);">90</span><span style="color: rgb(204, 120, 50);">,</span> ha=<span style="color: rgb(106, 135, 89);">"right"</span>)</span>
+<span md-src-pos="5883..5902">plt.tight_layout()</span>
+<span md-src-pos="5902..5903"></span><span md-src-pos="5902..5905"></span></code></pre>
+   <p md-src-pos="5932..5990"><img src="D:/Data%20Science/Python/projects/images/state.PNG" alt="State" __idea-generated="true" md-src-pos="5932..5990"></p>
+   <ul md-src-pos="5991..6140">
+    <li md-src-pos="5991..6140">Based on geographically, analyst can further investigate if the company is capable to proceed with market campaigning in the high demanding states.</li>
+   </ul>
+   <pre md-src-pos="6143..6368"><code class="language-python" md-src-pos="6143..6368"><span md-src-pos="6143..6153"></span><span md-src-pos="6153..6194">leadt = sns.countplot(loan1[<span style="color: rgb(106, 135, 89);">'leadType'</span>])</span>
+<span md-src-pos="6194..6266">leadt.set_xticklabels(leadt.get_xticklabels()<span style="color: rgb(204, 120, 50);">,</span> rotation=<span style="color: rgb(104, 151, 187);">50</span><span style="color: rgb(204, 120, 50);">,</span> ha=<span style="color: rgb(106, 135, 89);">"right"</span>)</span>
+<span md-src-pos="6266..6285">plt.tight_layout()</span>
+<span md-src-pos="6285..6286"></span>
+<span md-src-pos="6286..6365">sns.countplot(x=<span style="color: rgb(106, 135, 89);">'leadType'</span><span style="color: rgb(204, 120, 50);">,</span> hue = <span style="color: rgb(106, 135, 89);">"isFunded"</span><span style="color: rgb(204, 120, 50);">,</span> data = loan1<span style="color: rgb(204, 120, 50);">,</span> palette =<span style="color: rgb(106, 135, 89);">'Accent'</span>)</span>
+<span md-src-pos="6365..6366"></span><span md-src-pos="6365..6368"></span></code></pre>
+   <p md-src-pos="6395..6459"><img src="D:/Data%20Science/Python/projects/images/leadType.PNG" alt="leadType" __idea-generated="true" md-src-pos="6395..6459"></p>
+   <ul md-src-pos="6460..6561">
+    <li md-src-pos="6460..6561">Most of the sources are coming from the most expensive channel, which company bought from ping tree</li>
+   </ul>
+   <p md-src-pos="6589..6673"><img src="D:/Data%20Science/Python/projects/images/leadtype-isFunded.PNG" alt="leadType  isFunded" __idea-generated="true" md-src-pos="6589..6673"></p>
+   <ul md-src-pos="6674..7056">
+    <li md-src-pos="6674..6821">Successful conversion rate from lead to funded are supprisingly low with the 'bvMandatory' even standing as the highest ranking under 'isfunded'.</li>
+    <li md-src-pos="6822..7056">This bring to the question should the company continue to invest the budget into buying more leads from ping tree instead the company may plan more mail campaign/ advertise moneylion brand to obtain more attraction for new customer.</li>
+   </ul>
+   <hr>
+   <h1 md-src-pos="7062..7109">Join loan file with clarity underwriting file</h1>
+   <pre md-src-pos="7110..7315"><code class="language-python" md-src-pos="7110..7315"><span md-src-pos="7110..7120"></span><span md-src-pos="7120..7182">clarity_u = pd.read_csv(<span style="color: rgb(106, 135, 89);">"clarity_underwriting_variables.csv"</span>)</span>
+<span md-src-pos="7182..7312">loan2= loan1.merge(clarity_u[[<span style="color: rgb(106, 135, 89);">'underwritingid'</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(106, 135, 89);">'clearfraudscore'</span>]]<span style="color: rgb(204, 120, 50);">,</span>left_on=<span style="color: rgb(106, 135, 89);">'clarityFraudId'</span><span style="color: rgb(204, 120, 50);">,</span>right_on=<span style="color: rgb(106, 135, 89);">'underwritingid'</span><span style="color: rgb(204, 120, 50);">,</span>how=<span style="color: rgb(106, 135, 89);">'left'</span>)</span>
+<span md-src-pos="7312..7313"></span><span md-src-pos="7312..7315"></span></code></pre>
+   <ul md-src-pos="7316..7471">
+    <li md-src-pos="7316..7471">Joining only 'clearfraudscore' from 'clarity csv' into loan dataframe as it is crucial feature that the industry could have for fraud detection solution.</li>
+   </ul>
+   <pre md-src-pos="7473..7594"><code class="language-python" md-src-pos="7473..7594"><span md-src-pos="7473..7483"></span><span md-src-pos="7483..7523"><span style="color: rgb(128, 128, 128);"># clearfraudscore without missing value</span></span>
+<span md-src-pos="7523..7591">cfs = loan2.loc[loan2[<span style="color: rgb(106, 135, 89);">'clearfraudscore'</span>].notna()<span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(106, 135, 89);">'clearfraudscore'</span>]</span>
+<span md-src-pos="7591..7592"></span><span md-src-pos="7591..7594"></span></code></pre>
+   <pre md-src-pos="7596..7695"><code class="language-python" md-src-pos="7596..7695"><span md-src-pos="7596..7606"></span><span md-src-pos="7606..7642">loan2[<span style="color: rgb(106, 135, 89);">'clearfraudscore'</span>].describe()</span>
+<span md-src-pos="7642..7692">sns.distplot(loan2[<span style="color: rgb(106, 135, 89);">'clearfraudscore'</span>]<span style="color: rgb(204, 120, 50);">,</span> color=<span style="color: rgb(106, 135, 89);">'b'</span>)</span>
+<span md-src-pos="7692..7693"></span><span md-src-pos="7692..7695"></span></code></pre>
+   <p md-src-pos="7723..7801"><img src="D:/Data%20Science/Python/projects/images/clearfraudscore.PNG" alt="clearfraudscore" __idea-generated="true" md-src-pos="7723..7801"></p>
+   <ul md-src-pos="7802..8057">
+    <li md-src-pos="7802..7878">Higher clearfraudscore = higher fradulent chance, scoring range : 0 - 1000</li>
+    <li md-src-pos="7879..8057">Deep dive into clearfraudscore, notice that average scoring is around 690, but the highest propotion/desity falls under the 800 scoring with &gt;30% of the group seen in the plot.</li>
+   </ul>
+   <pre md-src-pos="8060..8159"><code class="language-python" md-src-pos="8060..8159"><span md-src-pos="8060..8070"></span><span md-src-pos="8070..8098">plt.figure(figsize=(<span style="color: rgb(104, 151, 187);">16</span><span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">6</span>))</span>
+<span md-src-pos="8098..8156">cfs2 = sns.violinplot (x=cfs<span style="color: rgb(204, 120, 50);">,</span> y=<span style="color: rgb(106, 135, 89);">'loanStatus'</span><span style="color: rgb(204, 120, 50);">,</span>data= loan2)</span>
+<span md-src-pos="8156..8157"></span><span md-src-pos="8156..8159"></span></code></pre>
+   <p md-src-pos="8186..8288"><img src="D:/Data%20Science/Python/projects/images/clearfraudscore-loanstatus.PNG" alt="clearfraudscore  loanstatus" __idea-generated="true" md-src-pos="8186..8288"></p>
+   <ul md-src-pos="8290..8635">
+    <li md-src-pos="8290..8457">Furthermore, through the violinplot, we can see "Rejected" + "External Collection" customer tends to have lower scoring which is signaling better profile/background.</li>
+    <li md-src-pos="8458..8547">Hence, there's a need for analyst/underwriter to review on the reason of the occurence.</li>
+    <li md-src-pos="8548..8635">Purpose is to increase revenue and lower cost of employ external party for collection</li>
+   </ul>
+   <hr>
+   <h1 md-src-pos="8641..8668">Joining with payment file</h1>
+   <pre md-src-pos="8670..8747"><code class="language-python" md-src-pos="8670..8747"><span md-src-pos="8670..8680"></span><span md-src-pos="8680..8744">Pymt = pd.read_csv(<span style="color: rgb(106, 135, 89);">"payment.csv"</span><span style="color: rgb(204, 120, 50);">,</span> parse_dates= [<span style="color: rgb(106, 135, 89);">'paymentDate'</span>])</span>
+<span md-src-pos="8744..8745"></span><span md-src-pos="8744..8747"></span></code></pre>
+   <ul md-src-pos="8748..8940">
+    <li md-src-pos="8748..8940">By default, date columns are represented as object when loading data from a CSV file. To read the date column correctly, we can use the argument parse_dates to specify a list of date columns</li>
+   </ul>
+   <pre md-src-pos="8942..9440"><code class="language-python" md-src-pos="8942..9440"><span md-src-pos="8942..8952"></span><span md-src-pos="8952..8990"><span style="color: rgb(128, 128, 128);"># value to be "1" if there's instance</span></span>
+<span md-src-pos="8990..9006">Pymt[<span style="color: rgb(106, 135, 89);">'val'</span>] = <span style="color: rgb(104, 151, 187);">1</span></span>
+<span md-src-pos="9006..9195"><span style="color: rgb(128, 128, 128);"># create new dataframe "pay_status" that consist aggregation of payment status and horizontal version of payment status that grouped based on each loanId and fill the missing value with 0.</span></span>
+<span md-src-pos="9195..9327">pay_status = (Pymt.pivot_table(index=[<span style="color: rgb(106, 135, 89);">'loanId'</span>]<span style="color: rgb(204, 120, 50);">,</span> columns=[<span style="color: rgb(106, 135, 89);">'paymentStatus'</span>]<span style="color: rgb(204, 120, 50);">,</span> values=<span style="color: rgb(106, 135, 89);">'val'</span><span style="color: rgb(204, 120, 50);">,</span> aggfunc=sum<span style="color: rgb(204, 120, 50);">,</span> fill_value=<span style="color: rgb(104, 151, 187);">0</span>).reset_index())</span>
+<span md-src-pos="9327..9328"></span>
+<span md-src-pos="9328..9382"><span style="color: rgb(128, 128, 128);"># join the newly create dataframe with main dataframe</span></span>
+<span md-src-pos="9382..9437">loan3= loan2.merge(pay_status<span style="color: rgb(204, 120, 50);">,</span> on=<span style="color: rgb(106, 135, 89);">'loanId'</span><span style="color: rgb(204, 120, 50);">,</span>how=<span style="color: rgb(106, 135, 89);">'left'</span>)</span>
+<span md-src-pos="9437..9438"></span><span md-src-pos="9437..9440"></span></code></pre>
+   <hr>
+   <h1 md-src-pos="9445..9466">Feature engineering</h1>
+   <pre md-src-pos="9468..9564"><code class="language-python" md-src-pos="9468..9564"><span md-src-pos="9468..9478"></span><span md-src-pos="9478..9504"><span style="color: rgb(128, 128, 128);"># random shuffle the data</span></span>
+<span md-src-pos="9504..9538"><span style="color: rgb(204, 120, 50);">from</span> sklearn.utils <span style="color: rgb(204, 120, 50);">import</span> shuffle</span>
+<span md-src-pos="9538..9561">loan4 = shuffle(loan3)</span>
+<span md-src-pos="9561..9562"></span><span md-src-pos="9561..9564"></span></code></pre>
+   <pre md-src-pos="9565..9709"><code class="language-python" md-src-pos="9565..9709"><span md-src-pos="9565..9575"></span><span md-src-pos="9575..9610"><span style="color: rgb(128, 128, 128);"># find out the correlated features</span></span>
+<span md-src-pos="9610..9638">plt.figure(figsize=(<span style="color: rgb(104, 151, 187);">12</span><span style="color: rgb(204, 120, 50);">,</span> <span style="color: rgb(104, 151, 187);">8</span>))</span>
+<span md-src-pos="9638..9706">correlation = sns.heatmap(loan4.corr()<span style="color: rgb(204, 120, 50);">,</span> annot=<span style="color: rgb(204, 120, 50);">True</span><span style="color: rgb(204, 120, 50);">,</span> cmap=<span style="color: rgb(106, 135, 89);">'viridis'</span>)</span>
+<span md-src-pos="9706..9707"></span><span md-src-pos="9706..9709"></span></code></pre>
+   <p md-src-pos="9737..9817"><img src="D:/Data%20Science/Python/projects/images/correlational.PNG" alt="Correlation heatmap" __idea-generated="true" md-src-pos="9737..9817"></p>
+   <pre md-src-pos="9820..9976"><code class="language-python" md-src-pos="9820..9976"><span md-src-pos="9820..9830"></span><span md-src-pos="9830..9973">loan5 = loan4.drop(columns={<span style="color: rgb(106, 135, 89);">'loanId'</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(106, 135, 89);">'anon_ssn'</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(106, 135, 89);">'underwritingid'</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(106, 135, 89);">'clarityFraudId'</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(106, 135, 89);">'approved'</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(106, 135, 89);">'originated'</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(106, 135, 89);">'applicationDate'</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(106, 135, 89);">'originatedDate'</span>})</span>
+<span md-src-pos="9973..9974"></span><span md-src-pos="9973..9976"></span></code></pre>
+   <ul md-src-pos="9977..10234">
+    <li md-src-pos="9977..10234">Understandable on the high correlation between 'approved', 'originated' and 'isFunded' as a thorough + solid KYC analysis will tends to lead to lower risk and better loan acceptance, thus remove 'approved' &amp; 'originated', date and identification features.</li>
+   </ul>
+   <pre md-src-pos="10236..10676"><code class="language-python" md-src-pos="10236..10676"><span md-src-pos="10236..10246"></span><span md-src-pos="10246..10280"><span style="color: rgb(204, 120, 50);">from</span> sklearn <span style="color: rgb(204, 120, 50);">import</span> preprocessing</span>
+<span md-src-pos="10280..10314">le = preprocessing.LabelEncoder()</span>
+<span md-src-pos="10314..10376">loan5[<span style="color: rgb(106, 135, 89);">'payFrequency'</span>]=le.fit_transform(loan5[<span style="color: rgb(106, 135, 89);">'payFrequency'</span>])</span>
+<span md-src-pos="10376..10434">loan5[<span style="color: rgb(106, 135, 89);">'loanStatus'</span>]=le.fit_transform(loan5[<span style="color: rgb(106, 135, 89);">'loanStatus'</span>])</span>
+<span md-src-pos="10434..10488">loan5[<span style="color: rgb(106, 135, 89);">'leadType'</span>]=le.fit_transform(loan5[<span style="color: rgb(106, 135, 89);">'leadType'</span>])</span>
+<span md-src-pos="10488..10542">loan5[<span style="color: rgb(106, 135, 89);">'fpStatus'</span>]=le.fit_transform(loan5[<span style="color: rgb(106, 135, 89);">'fpStatus'</span>])</span>
+<span md-src-pos="10542..10590">loan5[<span style="color: rgb(106, 135, 89);">'state'</span>]=le.fit_transform(loan5[<span style="color: rgb(106, 135, 89);">'state'</span>])</span>
+<span md-src-pos="10590..10604">loan6 = loan5</span>
+<span md-src-pos="10604..10605"></span>
+<span md-src-pos="10605..10649">features_ = loan6.drop(columns = [<span style="color: rgb(106, 135, 89);">'hasCF'</span>])</span>
+<span md-src-pos="10649..10673">target = loan6[<span style="color: rgb(106, 135, 89);">'hasCF'</span>]</span>
+<span md-src-pos="10673..10674"></span><span md-src-pos="10673..10676"></span></code></pre>
+   <ul md-src-pos="10677..10788">
+    <li md-src-pos="10677..10737">convert all x variable to integer as machine-readable form</li>
+    <li md-src-pos="10738..10788">split the target features out from the dataframe</li>
+   </ul>
+   <hr>
+   <h1 md-src-pos="10796..10814">Prediction Model</h1>
+   <pre md-src-pos="10815..11025"><code class="language-python" md-src-pos="10815..11025"><span md-src-pos="10815..10825"></span><span md-src-pos="10825..10864"><span style="color: rgb(128, 128, 128);">#Splitting of Training and Testing set</span></span>
+<span md-src-pos="10864..10917"><span style="color: rgb(204, 120, 50);">from</span> sklearn.model_selection <span style="color: rgb(204, 120, 50);">import</span> train_test_split</span>
+<span md-src-pos="10917..11022">X_train<span style="color: rgb(204, 120, 50);">,</span> X_test<span style="color: rgb(204, 120, 50);">,</span> y_train<span style="color: rgb(204, 120, 50);">,</span> y_test = train_test_split(features_<span style="color: rgb(204, 120, 50);">,</span> target<span style="color: rgb(204, 120, 50);">,</span> test_size = <span style="color: rgb(104, 151, 187);">0.3</span><span style="color: rgb(204, 120, 50);">,</span>random_state = <span style="color: rgb(104, 151, 187);">0</span>)</span>
+<span md-src-pos="11022..11023"></span><span md-src-pos="11022..11025"></span></code></pre>
+   <pre md-src-pos="11028..11270"><code class="language-python" md-src-pos="11028..11270"><span md-src-pos="11028..11038"></span><span md-src-pos="11038..11072"><span style="color: rgb(204, 120, 50);">from</span> xgboost <span style="color: rgb(204, 120, 50);">import</span> XGBClassifier</span>
+<span md-src-pos="11072..11094"><span style="color: rgb(204, 120, 50);">import</span> xgboost <span style="color: rgb(204, 120, 50);">as</span> xgb</span>
+<span md-src-pos="11094..11196">XGB = XGBClassifier(learning_rate=<span style="color: rgb(104, 151, 187);">0.1</span><span style="color: rgb(204, 120, 50);">,</span>n_estimators=<span style="color: rgb(104, 151, 187);">500</span><span style="color: rgb(204, 120, 50);">,</span>booster=<span style="color: rgb(106, 135, 89);">"gbtree"</span><span style="color: rgb(204, 120, 50);">,</span>reg_lambda=<span style="color: rgb(104, 151, 187);">0.5</span><span style="color: rgb(204, 120, 50);">,</span>reg_alpha=<span style="color: rgb(104, 151, 187);">0.5</span>)</span>
+<span md-src-pos="11196..11231">XGBclf = XGB.fit(X_train<span style="color: rgb(204, 120, 50);">,</span> y_train)</span>
+<span md-src-pos="11231..11267">y_pred_xgb = XGBclf.predict(X_test)</span>
+<span md-src-pos="11267..11268"></span><span md-src-pos="11267..11270"></span></code></pre>
+   <h3 md-src-pos="11271..11311">Reason of choosing the XGB technique:</h3>
+   <ol md-src-pos="11312..11729">
+    <li md-src-pos="11312..11469">Extreme Gradient Boosting, one of the popular machine learning models used to tackle the class imbalance that creates overfitting if not handled properly.</li>
+    <li md-src-pos="11470..11621">Ensemble method and is tree based, which handle great for null value and due to nature of automatic normalization, outliers will be handled as well.</li>
+    <li md-src-pos="11622..11729">Better in detect/learning complex non-linear decision boundaries as long it aligned to the feature axes.</li>
+   </ol>
+   <h1 md-src-pos="11731..11768">Model Evaluation (Confusion Matrix)</h1>
+   <pre md-src-pos="11769..12039"><code class="language-python" md-src-pos="11769..12039"><span md-src-pos="11769..11779"></span><span md-src-pos="11779..11807"><span style="color: rgb(204, 120, 50);">from</span> sklearn <span style="color: rgb(204, 120, 50);">import</span> metrics</span>
+<span md-src-pos="11807..11857"><span style="color: rgb(204, 120, 50);">from</span> sklearn.metrics <span style="color: rgb(204, 120, 50);">import</span> classification_report</span>
+<span md-src-pos="11857..11902"><span style="color: rgb(204, 120, 50);">from</span> sklearn.metrics <span style="color: rgb(204, 120, 50);">import</span> confusion_matrix</span>
+<span md-src-pos="11902..11958">scoring = metrics.accuracy_score(y_test<span style="color: rgb(204, 120, 50);">,</span>y_pred_xgb)*<span style="color: rgb(104, 151, 187);">100</span></span>
+<span md-src-pos="11958..11986">print(<span style="color: rgb(106, 135, 89);">"Accuracy:"</span><span style="color: rgb(204, 120, 50);">,</span> scoring)</span>
+<span md-src-pos="11986..11987"></span>
+<span md-src-pos="11987..12036">print(classification_report(y_test<span style="color: rgb(204, 120, 50);">,</span> y_pred_xgb))</span>
+<span md-src-pos="12036..12037"></span><span md-src-pos="12036..12039"></span></code></pre>
+   <pre md-src-pos="12040..12490"><code md-src-pos="12040..12490"><span md-src-pos="12040..12044"></span><span md-src-pos="12044..12071">Accuracy: 79.34450823692333</span>
+<span md-src-pos="12072..12072"></span>
+<span md-src-pos="12073..12131">             | precision    |recall  |f1-score   |support|</span>
+<span md-src-pos="12132..12190">             ---------------------------------------------</span>
+<span md-src-pos="12191..12249">           0 |      0.71    |  0.79  |   0.74    | 66168 |</span>
+<span md-src-pos="12250..12308">           1 |      0.86    |  0.80  |   0.83    |107137 |</span>
+<span md-src-pos="12309..12367">    accuracy |              |        |   0.79    |173305 |</span>
+<span md-src-pos="12368..12426">   macro avg |      0.78    |  0.79  |   0.79    |173305 |</span>
+<span md-src-pos="12427..12485">weighted avg |      0.80    |  0.79  |   0.80    |173305 |</span>
+<span md-src-pos="12486..12486"></span>
+<span md-src-pos="12487..12487"></span><span md-src-pos="12487..12490"></span></code></pre>
+   <pre md-src-pos="12492..12827"><code class="language-python" md-src-pos="12492..12827"><span md-src-pos="12492..12502"></span><span md-src-pos="12502..12544">cm1 = confusion_matrix(y_test<span style="color: rgb(204, 120, 50);">,</span>y_pred_xgb)</span>
+<span md-src-pos="12544..12548">cm1</span>
+<span md-src-pos="12548..12549"></span>
+<span md-src-pos="12549..12570">total1=sum(sum(cm1))</span>
+<span md-src-pos="12570..12577">total1</span>
+<span md-src-pos="12577..12578"></span>
+<span md-src-pos="12578..12616">accuracy1 =(cm1[<span style="color: rgb(104, 151, 187);">0</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(104, 151, 187);">0</span>]+cm1[<span style="color: rgb(104, 151, 187);">1</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(104, 151, 187);">1</span>])/total1</span>
+<span md-src-pos="12616..12650">print(<span style="color: rgb(106, 135, 89);">'XGB Accuracy:'</span><span style="color: rgb(204, 120, 50);">,</span> accuracy1)</span>
+<span md-src-pos="12650..12651"></span>
+<span md-src-pos="12651..12695">sensitivity1 = cm1[<span style="color: rgb(104, 151, 187);">0</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(104, 151, 187);">0</span>]/(cm1[<span style="color: rgb(104, 151, 187);">0</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(104, 151, 187);">0</span>]+cm1[<span style="color: rgb(104, 151, 187);">0</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(104, 151, 187);">1</span>])</span>
+<span md-src-pos="12695..12737">print(<span style="color: rgb(106, 135, 89);">'XGB Sensitivity : '</span><span style="color: rgb(204, 120, 50);">,</span> sensitivity1)</span>
+<span md-src-pos="12737..12738"></span>
+<span md-src-pos="12738..12782">specificity1 = cm1[<span style="color: rgb(104, 151, 187);">1</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(104, 151, 187);">1</span>]/(cm1[<span style="color: rgb(104, 151, 187);">1</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(104, 151, 187);">0</span>]+cm1[<span style="color: rgb(104, 151, 187);">1</span><span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(104, 151, 187);">1</span>])</span>
+<span md-src-pos="12782..12824">print(<span style="color: rgb(106, 135, 89);">'XGB Specificity : '</span><span style="color: rgb(204, 120, 50);">,</span> specificity1)</span>
+<span md-src-pos="12824..12825"></span><span md-src-pos="12824..12827"></span></code></pre>
+   <pre md-src-pos="12829..12949"><code md-src-pos="12829..12949"><span md-src-pos="12829..12833"></span><span md-src-pos="12833..12870">XGB Accuracy    :  0.7934450823692334</span>
+<span md-src-pos="12871..12908">XGB Sensitivity :  0.7850924918389554</span>
+<span md-src-pos="12909..12945">XGB Specificity :  0.798603656999916</span>
+<span md-src-pos="12946..12946"></span><span md-src-pos="12946..12949"></span></code></pre>
+   <ul md-src-pos="12950..13366">
+    <li md-src-pos="12950..13201">Although Accuracy is the overall indicator, we will emphasize more on the specificity rate as it depict the ability to correctly identify customer that didn't been chargeoff and this save the company from using more money to write off the bad debts.</li>
+    <li md-src-pos="13202..13366">Meaning to say, 10 customer profile reviewed for the bad debts writeoff, 8 times we can deduce that it can be recover and 2 times we will proceed with writeoff. </li>
+   </ul>
+   <hr>
+   <h1 md-src-pos="13372..13392">Feature Importance</h1>
+   <pre md-src-pos="13393..13655"><code class="language-python" md-src-pos="13393..13655"><span md-src-pos="13393..13403"></span><span md-src-pos="13403..13507">importances = pd.DataFrame(data={<span style="color: rgb(106, 135, 89);">'Attribute'</span> : X_train.columns<span style="color: rgb(204, 120, 50);">,</span><span style="color: rgb(106, 135, 89);">'Importance'</span>: XGB.feature_importances_})</span>
+<span md-src-pos="13507..13579">importances = importances.sort_values(by=<span style="color: rgb(106, 135, 89);">'Importance'</span><span style="color: rgb(204, 120, 50);">,</span> ascending=<span style="color: rgb(204, 120, 50);">False</span>)</span>
+<span md-src-pos="13579..13591">importances</span>
+<span md-src-pos="13591..13652">sns.barplot(y=<span style="color: rgb(106, 135, 89);">'Attribute'</span><span style="color: rgb(204, 120, 50);">,</span> x=<span style="color: rgb(106, 135, 89);">'Importance'</span><span style="color: rgb(204, 120, 50);">,</span> data=importances)</span>
+<span md-src-pos="13652..13653"></span><span md-src-pos="13652..13655"></span></code></pre>
+   <p md-src-pos="13682..13769"><img src="D:/Data%20Science/Python/projects/images/Feature%20Importance-XGB.PNG" alt="FeatureImportance" __idea-generated="true" md-src-pos="13682..13769"></p>
+   <hr>
+   <h1 md-src-pos="13775..13787">Conclusion</h1>
+   <ul md-src-pos="13788..14198">
+    <li md-src-pos="13788..13843">Achieved approximate 80% accuracy in prediction model</li>
+    <li md-src-pos="13844..14198">Few features require revisit by underwriter and analyst on feature "loanStatus" 
+     <ul md-src-pos="13929..14198">
+      <li md-src-pos="13929..13990">reason of high percentage for "withdrawn application" (78%)</li>
+      <li md-src-pos="13993..14198">"Rejected" + "External Collection" with lowest fraud scoring, why reject their application and why using extra money on external party to collect payment when it could have been saved for other planning,</li>
+     </ul></li>
+   </ul>
+   <h1 md-src-pos="14200..14214">Future Scope</h1>
+   <ul md-src-pos="14215..14612">
+    <li md-src-pos="14215..14297">Can include more recent years data as most of it was backdated to year 2014-2017</li>
+    <li md-src-pos="14298..14508">Lots of other feature weren't include in above exploration such as "PaymentReturnCode" that could give insight on reason for non payment, "fees" charged, underwriting(identity verification) for KYC purposes. </li>
+    <li md-src-pos="14509..14612">Utilize different other ML technique, hyperparameter tuning, feature selection, optimization and etc.</li>
+   </ul>
+  </div>
+ </body>
+</html>
